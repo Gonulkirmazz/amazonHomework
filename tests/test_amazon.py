@@ -12,12 +12,15 @@ class AmazonTest(unittest.TestCase):
         self.driver = webdriver.Chrome('C:/Users/User/Downloads/chromedriver')
         self.driver.get('https://www.amazon.com/')
         self.driver.maximize_window()
+        self.USER_MAIL = 'gorkem@getnada.com'
+        self.USER_PASSWORD = '123gm123'
+        self.SEARCH_TEXT = "Samsung"
 
     def test_partner(self):
         HomePage(self.driver).visited_page()
         HomePage(self.driver).click_login_page()
-        LoginPage(self.driver).login_amazon()
-        HomePage(self.driver).search_keyword()
+        LoginPage(self.driver).login_amazon(self.USER_MAIL, self.USER_PASSWORD)
+        HomePage(self.driver).search_keyword(self.SEARCH_TEXT)
         SearchResultPage(self.driver).check_search_result_on_page()
         SearchResultPage(self.driver).go_second_page()
         SearchResultPage(self.driver).select_preferred_product(2)

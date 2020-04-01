@@ -31,7 +31,7 @@ class SearchResultPage(Base):
 
     def select_preferred_product(self, preferred_product_order):
         """
-        Clicks to 3rd product on current page
+        Clicks to preferred  product on current page
 
         """
         self.wait_element_click((By.CSS_SELECTOR, "div[data-index='{}'] .a-size-medium"

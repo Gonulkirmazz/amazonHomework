@@ -24,10 +24,11 @@ class HomePage(Base):
         """
         self.wait_element_click(self.LOGIN_PAGE_CLICK).click()
 
-    def search_keyword(self):
+    def search_keyword(self, search_text):
         """
         Enters a text to search field and press to search button
-
+        :param str search_text: a string text to use as a search request
+        
         """
-        self.send_input(self.SEARCH_FIELD, self.SEARCH_TEXT)
+        self.send_input(self.SEARCH_FIELD, search_text)
         self.wait_element_click(self.SEARCH_BUTTON).click()
